@@ -158,10 +158,13 @@ class AttBillSplitter(object):
         """
 
         # this request will add some cookie
+        # this is no longer needed, an_req is returning null with this cookie
+        """
         self.session.get(
             'https://www.att.com/olam/passthroughAction.myworld',
             params={'actionType': 'ViewBillHistory'}
         )
+        """
         # get account number
         an_req = self.session.get(
             'https://www.att.com/olam/acctInfoView.myworld',
